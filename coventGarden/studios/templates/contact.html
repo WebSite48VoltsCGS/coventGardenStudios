@@ -1,0 +1,128 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+<!-- Header -->
+{% block header %}
+
+<header id="head" class="secondary"></header>
+
+{% endblock %}
+
+
+
+<!-- Page header -->
+{% block page_header %}
+
+<header class="page-header">
+	<h1 class="page-title">{{title}}</h1>
+</header>
+
+{% endblock %}
+
+
+
+<!-- Main content -->
+{% block content %}
+
+<!-- Content 1 -->
+<div class="stud">
+	<!-- Button(s) -->
+	<div class="button">
+		<a class="btn btn-action btn-lg" href="{% url 'booking' %}" role="button">Réserver un studio</a>
+	</div>
+
+	<!-- Content -->
+	<div class="row">
+		<!-- Left -->
+		<div class="col-sm-6">
+			<h2>Horaires :</h2><br>
+			<table class="table-center">
+				<tbody>
+					<tr><td>Lundi - Vendredi</td><td>16h00 -  </td><td>00h00</td></tr>
+					<tr><td>Samedi *</td><td>10h00 - </td><td>18h00</td></tr>
+					<tr><td>Dimanche</td><td>13h00 - </td><td>21h00</td></tr>
+				</tbody>
+			</table>
+			
+			<!-- Add link concert-->
+			<br>*Ouverture jusqu'à minuit les soirs de <a href="{% url 'concert' %}">concerts</a>.</p>
+		</div>
+
+		<!-- Right -->
+		<div class="col-sm-6">
+			<h2>Studios de répétition</h2><br>
+			E-Mail : <a href="mailto:contact@coventgarden.fr">contact@coventgarden.fr</a><br>
+			Tel : <a href="tel:0130365291">01 30 36 52 91</a>
+		</div>
+	</div>
+</div>
+
+<!-- Content 2 -->
+<div class="stud">
+	<div class="row">
+		<!-- Left -->
+		<div class="col-sm-6">
+			<h2>Adresse :</h2><br>
+			<p><a href="https://goo.gl/maps/xwy7vnXwuFTFXfJA8" target="_blank">
+				1 Rue du Bouvreuil,<br>
+				Parc d'activité de la Danne<br>
+				95610, Eragny-sur-Oise
+			</a></p>
+		</div>
+
+		<!-- Right -->
+		<div class="col-sm-6">
+			<h2>Programmation</h2><br>
+			E-Mail : <a href="progra@coventgarden.fr">progra@coventgarden.fr</a>
+		</div>
+	</div>
+</div>
+
+<!-- Content 3 -->
+<div class="studss">
+	<div class="row">
+		<!-- Left -->
+		<div class="col-sm-6">
+			<h2>Accès :</h2><br>
+			<div class="access">
+				<ul>
+					<li>Voiture : A proximité de la N184 et A15</li>
+					<li>RER A, arrêt Cergy-Préfecture ou Neuville Université</li>
+					<li>Transilien ligne J, arrêt Eragny-Neuville</li>
+					<li>Bus : ligne 49 Cergy Préfecture RER / Neuville Université RER, arrêt écluse</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Right -->
+		<div class="col-sm-6">
+			<h2>Autres questions</h2><br>
+			E-Mail : <a href="progra@coventgarden.fr">progra@coventgarden.fr</a><br>
+			Tel : <a href="tel:0130365291">01 30 36 52 91</a>
+		</div>
+	</div>
+</div>
+
+<!-- Content 4: Google Maps -->
+<div class="row">
+	<div class="col-sm-6">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d125603.48773383588!2d2.176306205946799!3d48.95927429137867!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6f5531a0bd495%3A0xc89a34ac7b94d4e9!2sCovent%20Garden%20Studios!5e0!3m2!1sfr!2sfr!4v1687936492555!5m2!1sfr!2sfr" width=100% height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
+</div>
+{% endblock %}
+
+
+
+<!-- Custom CSS styles file(s) -->
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'studios/css/contact.css' %}"/>
+
+{% endblock %}
+
+
+
+<!-- Custom JavaScript file(s) -->
+{% block scripts %}
+
+{% endblock %}

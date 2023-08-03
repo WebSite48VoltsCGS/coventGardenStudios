@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+<!-- Header -->
+{% block header %}
+
+<header id="head" class="secondary"></header>
+
+{% endblock %}
+
+
+
+<!-- Page header -->
+{% block page_header %}
+
+<header class="page-header">
+	<h1 class="page-title">{{title}}</h1>
+</header>
+
+{% endblock %}
+
+
+
+<!-- Main content -->
+{% block content %}
+
+<!-- Content 1: Text -->
+<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			Une erreur s'est produite et votre compte ne s'est pas créé!<br>
+			Cliquez <a href="{% url 'account_sign_up_form' %}">ici</a> pour retourner à la page d'inscription!
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+
+
+<!-- Custom CSS styles file(s) -->
+{% block style %}
+
+{% endblock %}
+
+
+
+<!-- Custom JavaScript file(s) -->
+{% block scripts %}
+
+{% endblock %}

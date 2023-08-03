@@ -1,0 +1,60 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+<!-- Header -->
+{% block header %}
+
+<header id="head" class="secondary"></header>
+
+{% endblock %}
+
+
+
+<!-- Page header -->
+{% block page_header %}
+
+<header class="page-header">
+	<h1 class="page-title">{{title}}</h1>
+</header>
+
+{% endblock %}
+
+
+
+<!-- Main content -->
+{% block content %}
+
+<!-- Content 1 -->
+<div class="row">
+	<div class="col-sm-12">
+		<div id="calendar"></div>
+	</div>
+</div>
+
+<div class="row justify-content-center align-items-center text-center" style="margin-top: 20px;">
+	<a class="btn btn-action btn-lg" href="{% url 'pro_area' %}" role="button">Demande de programmation</a>
+</div>
+
+{% endblock %}
+
+
+
+<!-- Custom CSS styles file(s) -->
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'studios/css/concert.css' %}"/>
+
+{% endblock %}
+
+
+
+<!-- Custom JavaScript file(s) -->
+{% block scripts %}
+
+<script src="{% static 'studios/js/concert.js' %}"></script>
+
+<!-- External JavaScript dependencies -->
+<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/index.global.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/index.global.min.js'></script>
+
+{% endblock %}

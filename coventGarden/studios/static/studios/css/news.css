@@ -1,0 +1,30 @@
+/* Ligne entre les studios */ 
+
+.stud {
+  border-top: 3px solid #c3b988;
+  padding-bottom: 25px;
+  margin-bottom: 20px;
+    margin-top: 75px;
+  text-align: center;
+  }
+  
+  .centerwhite {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+  
+  }
+  
+  .leftwhite {
+    color: white;
+    font-size: 26px;
+    margin-bottom: 15px;
+    text-align: left;
+  
+  }
+  
+  .text-container {
+    flex: 1;
+    text-align: justify;
+  }

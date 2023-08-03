@@ -1,0 +1,79 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+<!-- Header -->
+{% block header %}
+
+<header id="head" class="secondary"></header>
+
+{% endblock %}
+
+
+
+<!-- Page header -->
+{% block page_header %}
+
+<header class="page-header">
+	<h1 class="page-title">{{title}}</h1>
+</header>
+
+{% endblock %}
+
+<!-- Main content -->
+{% block content %}
+
+<!-- Content 1: Form -->
+<form method="post">
+	{% csrf_token %}
+	<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<!-- Title / Text -->
+				<h3 class="thin text-center">Changer ses informations</h3>
+				<p class="text-center text-muted">Vous voulez revenir à votre profil? <a href="{% url 'profile_detail' %}">Cliquez ici</a></p>
+
+				<hr>
+
+				<!-- Include form(s) here -->
+				{% include "base/base_form.html" %}
+
+				<hr>
+
+				<h3 class="thin text-center">Vérification</h3>
+				<p class="text-center text-muted">Veuillez rentrer votre mot de passe afin de compléter vos changements.</a></p>
+				{% include "base/base_form_confirm.html" %}
+
+				<hr>
+
+				<!-- Button(s) -->
+				<div class="row">
+					<!-- Left: Redirect -->
+					<div class="col-lg-6 text-left">
+						<button class="btn btn-action" type="button" onclick="window.location.href='{% url 'profile_detail' %}'">Annuler</button>
+					</div>
+
+					<!-- Right: Confirm -->
+					<div class="col-lg-6 text-right">
+						<button class="btn btn-action" type="submit">Confirmer</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+{% endblock %}
+
+
+
+<!-- Custom CSS styles file(s) -->
+{% block style %}
+
+{% endblock %}
+
+
+
+<!-- Custom JavaScript file(s) -->
+{% block scripts %}
+
+{% endblock %}

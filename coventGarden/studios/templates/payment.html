@@ -1,0 +1,134 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+<!-- Insert title -->
+{% block title %}
+
+<title>Paiement accompte</title>
+
+{% endblock %}
+
+
+
+<!-- Insert main header -->
+{% block header %}
+
+<header id="head" class="secondary"></header>
+
+{% endblock %}
+
+
+
+<!-- Insert content -->
+{% block content %}
+
+<head>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<!-- Container -->
+<div class="container">
+
+	<!-- Breadcrumb -->
+	<ol class="breadcrumb">
+        <li><a href="{% url 'home' %}">Accueil</a></li>
+        <li>Réservation</li>
+		<li class="active">Paiement accompte</li>
+	</ol> <!-- /Breadcrumb -->
+
+	<!-- Main content -->
+	<div class="row">
+
+		<!-- Article -->
+		<article class="col-sm-12 maincontent">
+
+			<!-- Header -->
+			<header class="page-header">
+				<h1 class="page-title">Paiement accompte</h1>
+			</header>
+			
+            <!-- Content 1: Form -->
+			<form  action="{% url 'payment' %}" method="POST">
+				<div class="justifie text-center text-muted">
+					<p>ATTENTION : Une session réservée ne pourra être annulée 48h à l'avance</p>
+					<p>Le paiment en ligne ne représente que la moitié du tarif total. Le reste sera payé le jour J, sur place.</p>
+				</div>
+				{% csrf_token %}
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<!-- Title / Text -->
+							<h3 class="thin text-center">Paiement accompte</h3>
+							<p class="text-center text-muted">Nous demandons le paiement d’un acompte pour la réservation.</p>
+
+							<hr>
+
+							<!-- Include form(s) here -->
+							{% include "base/base_form.html" %}
+                            <input type="hidden" name="salle_id" value="{{ salle.id }}">
+                            <input type="hidden" name="user_id" value="{{ user.id }}">
+
+							<hr>
+
+							<!-- Button(s) -->
+							<div class="row">
+								<div class="col-xs-6 col-sm-5 col-md-4 col-lg-4">
+									<button class="btn btn-secondary" type="button" onclick="window.location.href='{% url 'booking' %}'">Annuler</button>
+								</div>
+								<div class="col-xs-0 col-sm-2 col-md-4 col-lg-4">
+								</div>
+								<div class="col-xs-6 col-sm-5 col-md-4 col-lg-4">
+									<button class="btn btn-success" type="submit" id="checkout-button">Confirmer</button>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+	
+		</article> <!-- /Article -->
+
+	</div> <!-- /Main content -->
+
+</div> <!-- /Container -->
+
+{% endblock %}
+
+
+
+<!-- Custom CSS styles file(s) -->
+{% block style %}
+
+	<link rel="stylesheet" href="{% static 'studios/css/booking.css' %}">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock %}
+
+
+
+<!-- Custom JavaScript file(s) -->
+{% block scripts %}
+<script src="{% static 'studios/js/payment.js' %}"></script>
+<script>
+
+	
+	window.addEventListener('DOMContentLoaded', function() {
+		$('#id_name').val("{{user.username}}");
+		$('#id_email').val("{{user.email}}");
+		$('#id_salle').val("{{salle.name}}");
+		$('#id_duration').val("{{duration}}");
+		$('#id_date_start').val("{{ start_date|date:'Y-m-d H:i:s' }}");
+		$('#id_date_end').val("{{ end_date|date:'Y-m-d H:i:s' }}");
+		$('#id_price').val("{{price}}");
+		var form = document.querySelector('form');
+		if (form) {
+			var inputs = form.querySelectorAll('input');
+			inputs.forEach(function(input) {
+			input.setAttribute('readonly', 'readonly');
+			});
+		}
+	});
+</script>
+{% endblock %}

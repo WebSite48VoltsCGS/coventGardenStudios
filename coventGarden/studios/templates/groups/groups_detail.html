@@ -1,0 +1,208 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+<!-- Header -->
+{% block header %}
+
+<header id="head" class="secondary"></header>
+
+{% endblock %}
+
+
+
+<!-- Page header -->
+{% block page_header %}
+
+<header class="page-header">
+	<h1 class="page-title">{{title}}</h1>
+</header>
+
+{% endblock %}
+
+
+
+<!-- Main content -->
+{% block content %}
+
+<!-- Content 1 -->
+<div class="row">
+    <!-- Left -->
+	<div class="col-lg-6 text-left">
+		<form action="{% url 'groups_create' %}">
+			<button class="btn btn-action" >Créer un groupe</button>
+		</form>
+	</div>
+
+    <!-- Right -->
+	<div class="col-lg-6 text-right">
+		<form action="{% url 'pro_area' %}">
+			<button class="btn btn-action">Demander une programmation</button>
+		</form>
+	</div>
+	{% if messages %}
+	<ul class="messages">
+		{% for message in messages %}
+			<li {% if message.tags %}class="{{ message.tags }}"{% endif %}>
+				{{ message }}
+			</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+</div>
+
+<!-- Content 2: Panel -->
+<br>
+<div class="row">
+	<div class="col-sm-12">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h4>Quels sont les groupes avec lesquels je souhaite me produire ?</h4>
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr>
+								<th style="width: 30%;">Nom du groupe</th>
+								<th>Modifier</th>
+								<th>Supprimer</th>
+								<th>Fiche technique</th>
+								<th>Logo</th>
+								<th>Vérifié</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for group in my_groups %}
+							<tr>
+								<td class="group-name">{{ group.name }}</td>
+								<td><a href="{% url 'groups_update' group.id %}">Modifier</a></td>
+								<td class="delete-link"><a href="{% url 'groups_delete' group.id %}">Supprimer</a></td>
+								<td>
+									{% if group.technical_sheet %}
+										<input type="checkbox" name="verified" onclick="return false;" checked>
+									{% else %}
+										<input type="checkbox" name="verified" onclick="return false;">
+									{% endif %}
+								</td>
+								<td>
+									{% if group.logo %}
+										<input type="checkbox" name="verified" onclick="return false;" checked>
+									{% else %}
+										<input type="checkbox" name="verified" onclick="return false;">
+									{% endif %}
+								</td>
+								<td>
+									{% if group.validated %}
+										<input type="checkbox" name="verified" onclick="return false;" checked>
+									{% else %}
+										<input type="checkbox" name="verified" onclick="return false;">
+									{% endif %}
+								</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Content 3: Technical Sheet -->
+<div class="container">
+<div class="stud">
+	<div class="row">
+		<div class="col-sm-12">
+			<h2 class="ft">Données de mes groupes</h2>
+			<p>Lorsque vous souhaitez vous produire sur scène avec un groupe, le "leader" du groupe se doit de déposer la fiche technique correspondante ainsi que le logo du groupe sur son compte (une seule upload par groupe est nécéssaire)</p>
+
+			<br>
+
+			<div class="exemple-fiche-technique">
+				<h4>Comment remplir une fiche technique ? Voici un modèle valide :</h4>
+
+				<!-- Image -->
+				<div class="image-container">
+					<a href="#" id="image-link">
+						<div class="image-overlay">
+							<img src="{% static 'studios/images/Fiche-technique.png' %}" alt="Image fiche technique" onclick="showImage(this)">
+							<div class="overlay-text">
+								<p>Modèle fiche Technique</p>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Image click -->
+				<div id="imageModal" class="modal">
+					<span class="close" onclick="hideImage()"> &times; </span>
+					<img id="modalImage" alt="Image en grand">
+				</div>
+
+				<p>Document vierge téléchargeable ci-dessous : </p>
+
+				<a href="{% static 'studios/images/Fiche-technique.png' %}" download>
+					<button class="btnt"><i class="fa fa-download"></i> Fiche Technique</button>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Content 4: Files -->
+<div class="row">
+	<div class="col-sm-12">
+		<h2>Mes fichiers</h2>
+
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th style="width: 30%;">Nom du fichier</th>
+						<th style="width: 30%;">Fiche technique</th>
+						<th style="width: 30%;">Logo</th>
+						<th style="width: 10%;">Supprimer</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for group in my_groups %}
+					<tr>
+						<td>{{ group.name }}</td>
+						<td><a href="" target="_blank">{{ group.logo }}</a></td>
+						<td><a href="" target="_blank">{{ group.technical_sheet }}</a></td>
+						<td class="delete-link"><a href="">[Supprimer]</a></td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+<!-- Custom CSS styles file(s) -->
+{% block style %}
+<link rel="stylesheet" href="{% static 'studios/css/espace-pro.css' %}"/>
+<link rel="stylesheet" href="{% static 'studios/css/news.css' %}"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .group-name {
+        color:white;
+    }
+    
+    .delete-link a {
+        color: red;
+    }
+</style>
+
+{% endblock %}
+
+
+
+<!-- Custom JavaScript file(s) -->
+{% block scripts %}
+<script src="{% static 'studios/js/animation.js' %}"></script>
+{% endblock %}

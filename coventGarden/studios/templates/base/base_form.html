@@ -1,0 +1,41 @@
+<!-- Errors (form-related) -->
+{% if form.non_field_errors %}
+	<ul class='form-errors'>
+		{% for error in form.non_field_errors %}
+			<li>{{ error }}</li>
+		{% endfor %}
+	</ul>
+{% endif %}
+
+{% for field in form %}
+	<div class="top-margin">
+		<label for="{{ field.id_for_label }}">
+			<!-- Field display name -->
+			{{ field.label }}
+
+			<!-- If required: add a red asterik -->
+			{% if field.field.required %}<span class="text-danger">*</span>{% endif %}
+
+			<!-- Help text -->
+			{% if field.help_text %}
+				<ul>
+					{% for text in field.help_text %}
+						<li>{{ text }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</label>
+
+		<!-- Errors (field-related) -->
+		{% if field.errors %}
+			<ul class='form-errors'>
+				{% for error in field.errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+
+		<!-- Input field -->
+		{{ field }}
+	</div>
+{% endfor %}

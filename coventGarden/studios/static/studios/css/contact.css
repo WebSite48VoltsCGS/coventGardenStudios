@@ -1,0 +1,49 @@
+
+/* Mise en page Hoarires et prix */
+
+.horaires-tarifs-container {
+    display: flex;
+}
+
+.tarifs {
+    flex: 1;
+}
+
+/* Ligne entre les studios */ 
+
+.stud {
+	border-bottom: 3px solid #c3b988;
+	padding-bottom: 55px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.studss {
+	text-align: center;
+}
+
+ /* centrer les titres */
+
+h3 {
+	margin-bottom: 40px;
+	font-weight: bold;
+	font-size: xx-large;
+}
+
+.button{
+	
+	margin-top: 80px;
+}
+
+.table-center{
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.access {
+padding-bottom: 55px;
+margin-bottom: 20px;
+text-align: left;
+padding-left: 0;
+margin-left: 0;
+}

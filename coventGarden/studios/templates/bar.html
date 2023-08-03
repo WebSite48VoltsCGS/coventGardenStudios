@@ -1,0 +1,125 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+<!-- Header -->
+{% block header %}
+
+<header id="head" class="secondary"></header>
+
+{% endblock %}
+
+
+
+<!-- Page header -->
+{% block page_header %}
+
+<header class="page-header">
+	<h1 class="page-title">{{title}}</h1>
+</header>
+
+{% endblock %}
+
+
+
+<!-- Main content -->
+{% block content %}
+
+<!-- Content 1: Images -->
+<div class="row">
+	<!-- Left -->
+	<div class="col-sm-5">
+		<img class="navbar-brand" src="{% static 'studios/images/De_Sutter.png' %}">
+	</div>
+
+	<!-- Right -->
+	<div class="col-sm-7">
+		<img class="navbar-brand" src="{% static 'studios/images/photos-bar.jpg' %}">
+	</div>
+</div>
+
+<!-- Content 2: Text -->
+<h4 style="text-align:justify">Depuis de nombres années, le Covent Garden Studios fait confiance à la <a href="http://www.brasseriedesutter.com/" target="_blank">Brasserie De Sutter</a> pour leur fournir une bière artisanale de qualité.</h4>
+<h4 style="text-align:justify">La Brasserie De Sutter est fondée par deux frères, Antoine et Frédéric, passionnés par la bière et par sa fabrication. En 2008, ils se lancent dans des tests de création de recettes et suite à l’obtention de leurs diplômes en agronomie ainsi qu’en brasserie, les premières bières voient le jour. Rapidement confortés par la qualité de leurs produits, les brasseurs installent une unité de production artisanale de 800 litres.</h4>  
+<h4 style="text-align:justify">En janvier 2012, c’est le grand saut vers une fabrication maîtrisée et de plus grosse capacité grâce au déménagement de la Brasserie De Sutter à Gisors dans des locaux plus grands avec du matériel de brassage neuf et performant.</h4>
+
+<!-- Content 3: Swiper -->
+<div class="swiper mySwiper">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide"><img src="{% static 'studios/images/biere-artisanale-folies-de-sutter-ambree-rousse-dement-bree.png' %}" alt="Dément'brée"></div>
+		<div class="swiper-slide"><img src="{% static 'studios/images/biere-artisanale-folies-de-sutter-blanche-givree_1.png' %}" alt="Givrée"></div>
+		<div class="swiper-slide"><img src="{% static 'studios/images/biere-artisanale-folies-de-sutter-blonde-brin-de-folie.png' %}" alt="Brin de Folie"></div>
+		<div class="swiper-slide"><img src="{% static 'studios/images/biere-artisanale-folies-de-sutter-blonde-triple-folle-furieu.png' %}" alt="Folle Furieuse"></div>
+		<div class="swiper-slide"><img src="{% static 'studios/images/biere-artisanale-folies-de-sutter-sombre-folle-brune.png' %}" alt="Folle des Bois"></div>
+		<div class="swiper-slide"><img src="{% static 'studios/images/biere-artisanale-folies-de-sutter-fruits-rouges-folle-des-bo.png' %}" alt="Folle des bois"></div>
+		<div class="swiper-slide"><img src="{% static 'studios/images/biere-artisanale-folies-de-sutter-ipa-crazy-indian-pale-ale.png' %}" alt="Crazy - IPA"></div>
+		<div class="swiper-slide"><img src="{% static 'studios/images/biere-artisanale-folies-de-sutter-zinzin-quadruple-fermentat.png' %}" alt="Zin Zin"></div>
+		<div class="swiper-slide"><img src="{% static 'studios/images/biere-artisanale-folies-de-sutter-ictis.jpg' %}" alt="Ictis - Bio"></div>
+	</div>
+</div>
+
+{% endblock %}
+
+
+
+<!-- Custom CSS styles file(s) -->
+{% block style %}
+
+	<!-- Slider CSS -->
+	<link rel="stylesheet" href="{% static 'studios/css/slider.css' %}"/>
+
+	<!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+	<!-- Demo styles -->
+	<style>
+		.swiper {
+		width: 100%;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		}
+
+		.swiper-slide {
+		background-position: center;
+		background-size: cover;
+		width: 240px;
+		height: 240px;
+		}
+
+		.swiper-slide img {
+		display: block;
+		width: 100%;
+		}
+	</style>
+
+{% endblock %}
+
+
+
+<!-- Custom JavaScript file(s) -->
+{% block scripts %}
+
+	<!-- Swiper JS -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+	<!-- Initialize Swiper -->
+	<script>
+		var swiper = new Swiper(".mySwiper", {
+		  effect: "coverflow",
+		  grabCursor: true,
+		  centeredSlides: true,
+		  slidesPerView: "auto",
+		  coverflowEffect: {
+			rotate: 35,
+			stretch: 0,
+			depth: 40,
+			modifier: 1,
+			slideShadows: false,
+		  },
+		  pagination: {
+			el: ".swiper-pagination",
+		  },
+		  initialSlide: 2, // Affiche la 3e image (index 2) par défaut
+		});
+	</script>
+
+{% endblock %}

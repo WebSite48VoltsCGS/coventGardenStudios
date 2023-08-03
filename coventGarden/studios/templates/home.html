@@ -1,0 +1,112 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+<!-- Header -->
+{% block header %}
+
+<header id="head">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<img class="navbar-brand" src="{% static 'studios/images/logo.png' %}" alt= "Covent Garden logo">
+			</div>
+			<a class="btn btn-action btn-lg" href="{% url 'booking' %}" role="button">Réserver un studio</a>
+		</div>
+	</div>
+</header>
+
+{% endblock %}
+
+
+
+<!-- Page header -->
+{% block page_header %}
+
+{% endblock %}
+
+
+
+<!-- Main content -->
+{% block content %}
+
+<!-- Content 1: Studios -->
+<div class="row">
+	<!-- Title -->
+	<h2 class="text-center top-space">Les Studios</h2><br>
+
+	<!-- Left: Text -->
+	<div class="col-sm-6">
+		<h4 class="fade-in text-justify"><strong>4 studios de répétition, 1 salle de concert et 1 bar dans le Val-d'Oise</strong></h4>
+		<h4 class="fade-in text-justify">Tous nos studios insonorisés sont équipés de matériel <strong>professionnel</strong> entretenu. <br >Un régisseur est là pour vous accueillir et prendre soin de vous.</h4>
+		<h4 class="fade-in text-justify">Musicien amateur ou professionnel, le Covent Garden Studios est le lieu indépendant du 95 où vous pourrez exprimer toute votre créativité musicale.</h4>
+		<h4 class="fade-in text-justify">Répétition, résidence ou concert, nous sommes là pour vous accompagnez techniquement.</h4>
+	</div>
+
+	<!-- Right: Image -->
+	<div class="col-sm-6">
+		<img src="{% static 'studios/images/presentation_studios.jpg' %}" alt="presentation_studios">
+	</div>
+</div>
+
+<!-- Content 2: Concerts -->
+<div class="row">
+	<!-- Title -->
+	<h2 class="text-center top-space"><strong>Concerts</strong> </h2><br>
+
+	<!-- Left: Image -->
+	<div class="col-sm-6">
+		<p><img src="{% static 'studios/images/presentation_concerts.jpg' %}" alt="presentation_concerts"></p>
+	</div>
+
+	<!-- Right: Text -->
+	<div class="col-sm-6">
+		<h4 class="fade-in text-justify">La scène complètement équipée pour les lives, permettra aux groupes professionnels et amateurs de se produire dans d’excellentes conditions.</h4>
+	</div>
+</div>
+
+<!-- Content 3 -->
+<div class="row">
+	<!-- Title -->
+	<h3 class="text-center thin">Nos partenaires</h3>
+
+	<!-- Images -->
+	<div class="col-md-4 col-sm-6 highlight mx-auto">
+		<a class="navbar-brand" href="https://coventgarden.fr/" target="_blank">
+			<div class="crop-image-container text-center">
+				<img class="crop-image" src="{% static 'studios/images/48Volt.png' %}" alt="48Volts">
+			</div>
+		</a>
+	</div>
+
+	<div class="col-md-4 col-sm-6 highlight mx-auto">
+		<a class="navbar-brand" href="https://www.combo95.org/" target="_blank">
+			<div class="crop-image-container text-center">
+				<img class="crop-image" src="{% static 'studios/images/Combo95.png' %}" alt="Combo 95">
+			</div>
+		</a>
+	</div>
+	
+	<div class="col-md-4 col-sm-6 highlight mx-auto">
+		<a class="navbar-brand" href="https://www.brasseriedesutter.com/" target="_blank">
+			<div class="crop-image-container text-center">
+				<img class="crop-image" src="{% static 'studios/images/De_Sutter.png' %}" alt="De Sutter">
+			</div>
+		</a>
+	</div>
+</div>
+
+{% endblock %}
+
+
+
+<!-- Custom CSS styles file(s) -->
+{% block style %}
+
+{% endblock %}
+
+
+
+<!-- Custom JavaScript file(s) -->
+{% block scripts %}
+
+{% endblock %}

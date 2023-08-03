@@ -1,0 +1,167 @@
+.fc .fc-timegrid-slot {
+    border-bottom: 0px;
+    height: 4.5em;
+}
+
+.fc-v-event .fc-event-title{
+    text-align: center;
+    font-weight: bold;
+}
+
+.fc-timegrid-event .fc-event-time{
+    padding-top: 4px;
+    text-align: center;
+}
+
+.fc .fc-toolbar-title{
+    font-size: 1.25em;
+}
+
+/* couleur fond */
+.custom-event {
+    
+    
+    background-color: rgb(103, 198, 72) !important; /* Remplacez par la couleur souhaitée */
+  }
+  
+
+  /* Visite virtuelle */
+
+#panorama-supernova {
+	width: 100%;
+	height: 300px;
+}
+
+.panorama-supernova-container {
+	max-width: 525px; /* ajustez la valeur selon vos besoins */
+	margin: 0 auto; /* centre l'élément horizontalement */
+}
+
+#panorama-octopuss {
+	width: 100%;
+	height: 300px;
+}
+
+.panorama-octopuss-container {
+	max-width: 525px; /* ajustez la valeur selon vos besoins */
+	margin: 0 auto; /* centre l'élément horizontalement */
+}
+
+
+#panorama-rainbow {
+	width: 100%;
+	height: 300px;
+}
+
+.panorama-rainbow-container {
+	max-width: 525px; /* ajustez la valeur selon vos besoins */
+	margin: 0 auto; /* centre l'élément horizontalement */
+}
+
+#panorama-california {
+	width: 100%;
+	height: 300px;
+}
+
+.panorama-california-container {  /* Visite virtuelle */
+
+    #panorama-supernova {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .panorama-supernova-container {
+        max-width: 525px; /* ajustez la valeur selon vos besoins */
+        margin: 0 auto; /* centre l'élément horizontalement */
+    }
+    
+    #panorama-octopuss {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .panorama-octopuss-container {
+        max-width: 525px; /* ajustez la valeur selon vos besoins */
+        margin: 0 auto; /* centre l'élément horizontalement */
+    }
+    
+    
+    #panorama-rainbow {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .panorama-rainbow-container {
+        max-width: 525px; /* ajustez la valeur selon vos besoins */
+        margin: 0 auto; /* centre l'élément horizontalement */
+    }
+    
+    #panorama-california {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .panorama-california-container {
+        max-width: 525px; /* ajustez la valeur selon vos besoins */
+        margin: 0 auto; /* centre l'élément horizontalement */
+    }
+    
+    #panorama-scene {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .panorama-scene-container {
+        max-width: 525px; /* ajustez la valeur selon vos besoins */
+        margin: 0 auto; /* centre l'élément horizontalement */
+    }
+    
+    .image-container {
+        flex: 0 0 50%;
+        margin-right: 20px;
+    }
+    
+}
+
+.panorama-scene-container {
+	max-width: 525px; /* ajustez la valeur selon vos besoins */
+	margin: 0 auto; /* centre l'élément horizontalement */
+}
+
+.image-container {
+	flex: 0 0 50%;
+	margin-right: 20px;
+}
+
+.text-container {
+	flex: 1;
+	text-align: justify;
+}
+
+/* Ligne entre les studios */ 
+
+  .stud {
+	border-bottom: 3px solid #c3b988;
+	padding-bottom: 55px;
+	margin-bottom: 20px;
+	text-align: center;
+	
+  }
+
+ /* centrer les titres */
+
+ h3 {
+	margin-bottom: 40px;
+	font-weight: bold;
+	font-size: xx-large;
+ }
+
+ .button{
+	
+	margin-top: 80px;
+ }
+
+ .table-center{
+   margin-left: auto;
+   margin-right: auto;
+ }

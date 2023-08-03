@@ -1,0 +1,24 @@
+<!-- Breadcrumb -->
+{% if breadcrumb %}
+	<ol class="breadcrumb">
+		{% for trail in breadcrumb %}
+			<!-- Trails -->
+			{% if not forloop.last %}
+			
+				<!-- Add a url -->
+				{% if trail.view is not null %}
+					<li><a href="{% url trail.view %}">{{trail.name}}</a></li>
+				
+				<!-- No url -->
+				{% else %}
+					<li>{{trail.name}}</li>
+				{% endif %}
+
+			<!-- Last trail -->
+			{% else %}
+				<li class="active">{{trail.name}}</li>
+			{% endif %}
+
+		{%endfor%}
+	</ol>
+{% endif %}

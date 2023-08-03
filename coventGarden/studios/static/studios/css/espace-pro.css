@@ -1,0 +1,255 @@
+/*image*/
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+  
+
+
+.image-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-overlay img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s;
+}
+
+.image-overlay:hover img {
+  filter: brightness(50%);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.image-overlay:hover .overlay-text {
+  opacity: 1;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+  background-color: white;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%; /* Vous pouvez ajuster cette valeur pour définir la largeur de la fenêtre modale */
+  max-height: 80%;
+  background-color: #fff;
+  padding: 20px;
+}
+
+/* Autres styles pour la fenêtre modale */
+
+#modalImage {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.close {
+  color: red;
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: rgb(159, 4, 4);
+}
+
+.image-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-overlay img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s;
+}
+
+.image-overlay:hover img {
+  filter: brightness(50%);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.image-overlay:hover .overlay-text {
+  opacity: 1;
+}
+
+
+.exemple-fiche-technique{
+  text-align: center;
+}
+
+/* Style buttons */
+.btnt{
+  background-color: #c3b988;
+  border: none;
+  color: #191919;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.btnt:hover {
+  background-color: gold;
+}
+
+/*lien*/ 
+
+.lien a{
+  color: #c3b988;
+}
+
+.lien a:hover {
+  color: #fff;
+}
+
+
+/*Custom des boutons du formulaire*/ 
+
+
+/* Style du formulaire */
+.custom-form {
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+background-color:white;
+}
+
+/* Style des champs du formulaire */
+.custom-form p {
+  margin: 10px 0;
+}
+
+/* Style du bouton "Enregistrer" */
+.custom-button {
+  background-color:  #FF8C00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Style du champ de fichier */
+.custom-file-input {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: none;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+/* Style du champ de fichier au survol */
+.custom-file-input:hover {
+  border-color: #aaa;
+}
+
+/* Style du champ de fichier lorsqu'il a le focus */
+.custom-file-input:focus {
+  border-color: #FF9B22;
+  outline: none;
+}
+
+/* Style pour masquer l'apparence par défaut du champ de fichier */
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.custom-file-input::before {
+  content: 'Choisir un fichier';
+  display: inline-block;
+  background-color: gold;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-file-input::after {
+  content: 'caca';
+  display: inline-block;
+  padding: 10px;
+}
+
+/* fiche titre */
+h2.ft{
+  color: white;
+}
+
+/* alert-success*/
+
+ul.messages{
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+  max-width: 400px; 
+  margin: 0 auto;
+}
+
+
+/*delete-link*/
+
+.delete-link a {
+  color: red;
+}
+
+
+

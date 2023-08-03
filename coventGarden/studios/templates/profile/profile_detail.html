@@ -1,0 +1,89 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+<!-- Header -->
+{% block header %}
+
+<header id="head" class="secondary"></header>
+
+{% endblock %}
+
+
+
+<!-- Page header -->
+{% block page_header %}
+
+<header class="page-header">
+	<h1 class="page-title">{{title}}</h1>
+</header>
+
+{% endblock %}
+
+
+
+<!-- Main content -->
+{% block content %}
+
+
+<!-- Content 1: Button(s) -->
+<div class="row">
+	<div class="col-lg-6 text-left">
+		<form action="{% url 'profile_update' %}">
+			<button class="btn btn-action">Modifier son profil</button>
+		</form>
+	</div>
+
+	<div class="col-lg-6 text-right">
+		<form action="{% url 'account_log_out' %}">
+			<button class="btn btn-action">Déconnexion</button>
+		</form>
+	</div>
+</div>
+<br>
+<!-- Content 2: Table -->
+<div class="row">
+	<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h4 class="text-center">Informations Personnelles</h4>
+				<table class="table">
+					<tbody>
+						<tr>
+							<td>Nom:</td>
+							<td>{{ user.last_name }}</td>
+						</tr>
+						<tr>
+							<td>Prénom:</td>
+							<td>{{ user.first_name }}</td>
+						</tr>
+						<tr>
+							<td>E-mail:</td>
+							<td>{{ user.email }}</td>
+						</tr>
+						<tr>
+							<td>Téléphone:</td>
+							<td>{{ user.phone }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+
+
+<!-- Custom CSS styles file(s) -->
+{% block style %}
+
+{% endblock %}
+
+
+
+<!-- Custom JavaScript file(s) -->
+{% block scripts %}
+
+{% endblock %}
